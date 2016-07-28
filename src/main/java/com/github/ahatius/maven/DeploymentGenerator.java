@@ -54,6 +54,10 @@ public class DeploymentGenerator {
         File sources = new File(file.getParent(), artifactId + "-" + version + "-sources.jar");
         File javadoc = new File(file.getParent(), artifactId + "-" + version + "-javadoc.jar");
 
+        if(!artifact.isFile()) {
+          continue;
+        }
+
         StringBuilder sb = new StringBuilder();
 
         sb.append("mvn deploy:deploy-file -DgeneratePom=false ");
@@ -86,7 +90,7 @@ public class DeploymentGenerator {
 
         if (javadoc.exists()) {
           sb.append(" ");
-          sb.append("-javadoc=");
+          sb.append("-Djavadoc=");
           sb.append(javadoc.getAbsolutePath());
         }
 
