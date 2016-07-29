@@ -55,6 +55,7 @@ public class DeploymentGenerator {
         File javadoc = new File(file.getParent(), artifactId + "-" + version + "-javadoc.jar");
 
         if(!artifact.isFile()) {
+          System.out.println("Artifact for " + groupId + ":" + artifactId + ":" + version + " not found");
           continue;
         }
 
