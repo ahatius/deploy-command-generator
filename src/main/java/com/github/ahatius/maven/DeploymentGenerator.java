@@ -61,7 +61,7 @@ public class DeploymentGenerator {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append("mvn deploy:deploy-file -DgeneratePom=false ");
+        sb.append("call mvn deploy:deploy-file -DgeneratePom=false ");
         sb.append("-Durl=");
 
         if(!version.toLowerCase().endsWith("-snapshot")) {
