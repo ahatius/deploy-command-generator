@@ -3,6 +3,18 @@ Generates a list of mvn commands that can be executed to upload artifacts from a
 remote repository. To use the generated commands, you need to configure your Maven settings.xml with
 the target repository (id, user, password).
 
+This script is intended for users who'd like to migrate their Sonatype Nexus installation to the new 3.0 
+version. Since there is no migration assistant for upgrades from 2.x to 3.0 (expected with version 3.1), 
+it is required to manually upload all artifacts again.
+
+Nexus 2.x saved the artifacts in the sonatype-work directory on the filesystem. Therefore one can copy all 
+their artifacts from the specific repository directories into one directory, and then execute this program. 
+Make sure that you do not copy .index or .meta directories from the sonatype-work directory, since those will 
+cause SAXParserExceptions.
+
+Once the program finishes running, you will receive an output file that contains mvn deploy commands for each 
+and every artifact that was found, which you then can just run as script.
+
 # Configuration
 Example repository configuration:
 ```xml
