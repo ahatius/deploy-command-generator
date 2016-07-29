@@ -34,6 +34,8 @@ Usage: <main class> [options]
   * -r
        The target repository id that is configured in the settings.xml
   * -u
-       The target deployment URL of the repository
+       The target deployment URL for releases
+  * -s
+       The target deployment URL for snapshots
 
 ```
