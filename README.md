@@ -49,5 +49,7 @@ Usage: <main class> [options]
        The target deployment URL for releases
   * -s
        The target deployment URL for snapshots
+  * -w
+       Windows batch mode - adds a call command before each mvn command to allow execution within a batch script, otherwise a shell script will be created
 
 ```
